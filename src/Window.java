@@ -35,7 +35,6 @@ public class Window extends JPanel implements KeyListener {
     void tick(){
         System.out.println("tick");
         game.progress();
-        game.checkLines();
         frame.repaint();
 
     }

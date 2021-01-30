@@ -72,6 +72,7 @@ public class Game {
 
             }
         }
+        checkLines();
     }
 
     public void clearLine(int height){
