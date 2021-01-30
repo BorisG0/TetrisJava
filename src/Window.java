@@ -63,6 +63,8 @@ public class Window extends JPanel implements KeyListener {
 
             }
         }
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.drawString("Points: " + game.getPoints(),100,100);
     }
 
     public void keyTyped(KeyEvent e) {

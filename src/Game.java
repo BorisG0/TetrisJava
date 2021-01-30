@@ -3,8 +3,9 @@ import java.awt.*;
 public class Game {
     int[][] array;
     Tile currentTile;
-    int width, height, xPos, yPos;
+    int width, height, xPos, yPos, points;
     Game(int width, int height){
+        points = 0;
         this.width = width;
         this.height = height;
         array = new int[width][height];
@@ -15,6 +16,10 @@ public class Game {
 
     public Color getCurrentTileColor(){
         return currentTile.color;
+    }
+
+    public int getPoints(){
+        return points;
     }
 
     public Tile randomTile(){
@@ -37,7 +42,7 @@ public class Game {
                 break;
             case 3:
                 newLook = new int[][]{{1,1},{1,1}};
-                color = Color.pink;
+                color = Color.magenta;
                 break;
             case 4:
                 newLook = new int[][]{{0,1},{1,1},{0,1}};
@@ -78,6 +83,7 @@ public class Game {
                 array[j][i] = array[j][i - 1];
             }
         }
+        points++;
 
     }
 
