@@ -1,9 +1,13 @@
+import java.awt.*;
+
 public class Tile {
     int[][] look;
     int xPos, yPos;
+    Color color;
 
-    Tile(int[][] look){
+    Tile(int[][] look, Color color){
         this.look = look;
+        this.color = color;
 
     }
 

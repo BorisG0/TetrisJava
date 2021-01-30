@@ -46,7 +46,7 @@ public class Window extends JPanel implements KeyListener {
         for(int i = 0; i < game.getWidth(); i++){
             for(int j = 0; j < game.getHeight(); j++){
                 if(game.getSquare(i,j) == 1){
-                    g.setColor(Color.red);
+                    g.setColor(game.getCurrentTileColor());
                     g.fillRect(sqrSize*i,sqrSize*j,sqrSize,sqrSize);
 
                     g.setColor(Color.black);

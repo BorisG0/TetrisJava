@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Game {
     int[][] array;
     Tile currentTile;
@@ -11,29 +13,48 @@ public class Game {
         yPos = 0;
     }
 
+    public Color getCurrentTileColor(){
+        return currentTile.color;
+    }
+
     public Tile randomTile(){
         int[][] newLook = null;
         int randNum = (int)Math.round(Math.random() * 6);
+        Color color = null;
 
         switch (randNum){
-            case 0: newLook = new int[][]{{1,1,1,1}};
+            case 0:
+                newLook = new int[][]{{1,1,1,1}};
+                color = Color.red;
                 break;
-            case 1: newLook = new int[][]{{1,1,0},{0,1,1}};
+            case 1:
+                newLook = new int[][]{{1,1,0},{0,1,1}};
+                color = Color.green;
                 break;
-            case 2: newLook = new int[][]{{0,1,1},{1,1,0}};
+            case 2:
+                newLook = new int[][]{{0,1,1},{1,1,0}};
+                color = Color.cyan;
                 break;
-            case 3: newLook = new int[][]{{1,1},{1,1}};
+            case 3:
+                newLook = new int[][]{{1,1},{1,1}};
+                color = Color.pink;
                 break;
-            case 4: newLook = new int[][]{{0,1},{1,1},{0,1}};
+            case 4:
+                newLook = new int[][]{{0,1},{1,1},{0,1}};
+                color = Color.yellow;
                 break;
-            case 5: newLook = new int[][]{{1,1,1},{1,0,0}};
+            case 5:
+                newLook = new int[][]{{1,1,1},{1,0,0}};
+                color = Color.orange;
                 break;
-            case 6: newLook = new int[][]{{1,0,0},{1,1,1}};
+            case 6:
+                newLook = new int[][]{{1,0,0},{1,1,1}};
+                color = Color.white;
                 break;
         }
 
 
-        return new Tile(newLook);
+        return new Tile(newLook, color);
     }
 
     public void nextTile(){
